@@ -1,0 +1,62 @@
+﻿@model MvcHomework.Models.Kisi
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+    <div class="card text-center">
+        <div class="card-header">
+            Kayıt Silme Bölümündesiniz
+        </div>
+        <div class="card-body">
+            <form action="@Url.Action("Delete","Admin")" method="post">
+                <input type="hidden" name="ID" value="@Model.ID" />
+                <input type="hidden" name="AD" value="@Model.AD" />
+                <input type="hidden" name="SOYAD" value="@Model.SOYAD" />
+                <input type="hidden" name="YAS" value="@Model.YAS" />
+                <input type="hidden" name="TELEFON" value="@Model.TELEFON" />
+                <input type="hidden" name="MEMLEKET" value="@Model.MEMLEKET" />
+                <input type="hidden" name="EMAIL" value="@Model.EMAIL" />
+                <input type="hidden" name="ADRES" value="@Model.ADRES" />
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="ad">Ad</label>
+                        <input name="AD" type="text" class="form-control" id="ad" value="@Model.AD" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="soyad">Soyad</label>
+                        <input name="SOYAD" type="text" class="form-control" id="soyad" value="@Model.SOYAD" required>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label for="yas">Yaş</label>
+                        <input name="YAS" type="text" class="form-control" id="yas" value="@Model.YAS" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="tel">Telefon</label>
+                        <input name="TELEFON" type="tel" class="form-control" id="tel" value="@Model.TELEFON" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="memleket">Memleket</label>
+                        <input name="MEMLEKET" type="text" class="form-control" id="memleket" value="@Model.MEMLEKET" required>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label for="email">E-Mail</label>
+                        <input name="EMAIL" type="text" class="form-control" id="email" value="@Model.EMAIL" required>
+                    </div>
+
+                    <div class="form-group col-md-12 mb-3 text-center">
+                        <label for="adres">Adres</label>
+                        <input name="ADRES" type="text" class="form-control" id="adres" value="@Model.ADRES" required></input>
+                    </div>
+                </div>
+
+                <label for="kayit">Kişinin Silinmesi İçin Sil Butonuna Tıklayınız..</label><br />
+                <button class="btn btn-danger" type="submit" value="Confirm Delete">Sil</button>
+            </form>
+        </div>
+        <div class="card-footer">
+            <br />
+        </div>
+    </div>

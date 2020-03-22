@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MvcHomework.Models.Kisi>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">AD</th>
+            <th scope="col">SOYAD</th>
+            <th scope="col">YAŞ</th>
+            <th scope="col">TELEFON</th>
+            <th scope="col">MEMLEKET</th>
+            <th scope="col">E-MAIL</th>
+            <th scope="col">ADRES</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.AD</td>
+                <td>@item.SOYAD</td>
+                <td>@item.YAS</td>
+                <td>@item.TELEFON</td>
+                <td>@item.MEMLEKET</td>
+                <td>@item.EMAIL</td>
+                <td>@item.ADRES</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

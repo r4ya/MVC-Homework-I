@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MvcHomework.Models.Kisi>
+@{
+    ViewBag.Title = "Index2";
+    Layout = "~/Views/Shared/_LayoutPage2.cshtml";
+}
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">AD</th>
+            <th scope="col">SOYAD</th>
+            <th scope="col">YAŞ</th>
+            <th scope="col">TELEFON</th>
+            <th scope="col">MEMLEKET</th>
+            <th scope="col">E-MAIL</th>
+            <th scope="col">ADRES</th>
+            <th scope="col">DÜZENLE</th>
+            <th scope="col">SİL</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.AD</td>
+                <td>@item.SOYAD</td>
+                <td>@item.YAS</td>
+                <td>@item.TELEFON</td>
+                <td>@item.MEMLEKET</td>
+                <td>@item.EMAIL</td>
+                <td>@item.ADRES</td>
+                <td>
+                    <button type="button" class="btn btn-warning btn-sm">
+                        <a class="text-dark" href="@Url.Action("Edit","Admin",new {ID = item.ID })">Düzenle</a>
+                    </button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger btn-sm">
+                        <a class="text-white" href="@Url.Action("Delete","Admin",new {ID = item.ID })">Sil</a>
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
